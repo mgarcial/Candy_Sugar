@@ -30,6 +30,7 @@ public class controlPickable : MonoBehaviour, MMEventListener<EventoPickable>
 
     public virtual void OnMMEvent(EventoPickable e)
     {
+        recogidos++;
         switch (e.tipoRecogible)
         {
             case recogibles.Llave:
@@ -39,9 +40,8 @@ public class controlPickable : MonoBehaviour, MMEventListener<EventoPickable>
                 }
                 return;
             case recogibles.Moneda:
-                Debug.Log("Recogí la moneda: " + recogidos);
                 if (recogidos == 1)
-                {;
+                {
                     ActivableGameObject.SetActive(true);
                     MMGameEvent.Trigger("VentanaMision");
                 }
@@ -51,9 +51,18 @@ public class controlPickable : MonoBehaviour, MMEventListener<EventoPickable>
                 }
                 if (recogidos == monedasParaVida)
                 {
-                    EventoCambiarVida.Trigger(e.recolector, AccionCambioVida.Añadir, 1);
+                    GameManager.Instance.GainLives(1);
                 }
                 return;
         }
+    }
+
+    void OnEnable()
+    {
+        this.MMEventStartListening<EventoPickable>();
+    }
+    void OnDisable()
+    {
+        this.MMEventStopListening<EventoPickable>();
     }
 }

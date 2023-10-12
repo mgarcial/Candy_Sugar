@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Yo;
 
 public class Llaves : PickableItem
 {
@@ -10,6 +11,6 @@ public class Llaves : PickableItem
 
     protected override void Pick(GameObject recolector)
     {
-        control.Recogidos++;
+        EventoPickable.Trigger(this._character, recogibles.Llave);
     }
 }

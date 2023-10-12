@@ -13,10 +13,7 @@ public class Monedas : PickableItem
 
     protected override void Pick(GameObject recolector)
     {
-        Debug.Log("Fui recogida");
         CorgiEnginePointsEvent.Trigger(PointsMethods.Add, puntos);
-        EventoPickable.Trigger(this._character, recogibles.Moneda);
-        control.Personaje = recolector.GetComponent<Character>();
-        control.Recogidos++;
+        EventoPickable.Trigger(recolector.GetComponent<Character>(), recogibles.Moneda);
     }
 }

@@ -6,17 +6,15 @@ using UnityEngine;
 
 public class ControlVenta : MonoBehaviour, MMEventListener<MMGameEvent>
 {
-    bool cerrar;
 
     private void Start()
     {
-        cerrar = false;
         this.gameObject.SetActive(false);
     }
 
     public void BotonCerrar()
     {
-        cerrar = true;
+        StartCoroutine(CerrarVentana(2));
     }
 
     public virtual void OnMMEvent(MMGameEvent e)
@@ -24,15 +22,30 @@ public class ControlVenta : MonoBehaviour, MMEventListener<MMGameEvent>
         switch (e.EventName)
         {
             case ("VentanaMision"):
-                StartCoroutine(CerrarVentana());
+                StartCoroutine(AbrirVentana(2));
                 break;
         }
     }
 
-    IEnumerator CerrarVentana()
+    void OnEnable()
+    {
+        this.MMEventStartListening<MMGameEvent>();
+    }
+    void OnDisable()
+    {
+        this.MMEventStopListening<MMGameEvent>();
+    }
+
+    IEnumerator AbrirVentana(int seg)
     {
         GameManager.Instance.Pause(PauseMethods.NoPauseMenu);
-        yield return new WaitUntil(() => cerrar = true);
+        yield return new WaitForSeconds(seg);
+    }
+
+    IEnumerator CerrarVentana(int seg)
+    {
+        GameManager.Instance.UnPause(PauseMethods.NoPauseMenu);
         this.gameObject.SetActive(false);
+        yield return new WaitForSeconds(seg);
     }
 }
