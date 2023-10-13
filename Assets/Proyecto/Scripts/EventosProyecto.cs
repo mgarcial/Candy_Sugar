@@ -7,32 +7,7 @@ using UnityEngine;
 //Este namespace tiene los diferentes eventos propios que utilizaremos para el juego
 namespace MoreMountains.Yo
 {
-
-    public enum AccionCambioVida { Añadir, Quitar, Setear }
-
     public enum recogibles{ Llave, Moneda, General}
-
-    public struct EventoCambiarVida
-    {
-        public Character personajeObjetivo;
-        public AccionCambioVida tipoAccion;
-        public int cantidad;
-
-        public EventoCambiarVida(Character _PersonajeObjetivo, AccionCambioVida _TipoAccion, int _cantidad)
-        {
-            personajeObjetivo = _PersonajeObjetivo;
-            tipoAccion = _TipoAccion;
-            cantidad = _cantidad;
-        }
-
-        static EventoCambiarVida e;
-        public static void Trigger(Character _PersonajeObjetivo, AccionCambioVida _TipoAccion, int _cantidad)
-        {
-            e.personajeObjetivo = _PersonajeObjetivo;
-            e.tipoAccion = _TipoAccion;
-            e.cantidad = _cantidad;
-        }
-    }
 
     public struct EventoPickable
     {
@@ -51,6 +26,27 @@ namespace MoreMountains.Yo
         {
             e.recolector = _recolector;
             e.tipoRecogible = _tipoRecogible;
+            MMEventManager.TriggerEvent(e);
+        }
+    }
+
+    public struct EventoEnemigo
+    {
+        public Enemigos enemigo;
+        public string nombre;
+
+        public EventoEnemigo(Enemigos _enemigo, string _nombre)
+        {
+            enemigo = _enemigo;
+            nombre = _nombre;
+        }
+
+        static EventoEnemigo e;
+
+        public static void Trigger(Enemigos _enemigo, string _nombre)
+        {
+            e.enemigo = _enemigo;
+            e.nombre = _nombre;
             MMEventManager.TriggerEvent(e);
         }
     }

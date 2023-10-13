@@ -1244,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 185888, guid: 8e296d59abfa4c040b97ce5fd6451a1a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 403118, guid: 8e296d59abfa4c040b97ce5fd6451a1a, type: 3}
       propertyPath: m_RootOrder
@@ -1300,7 +1300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11403552, guid: 8e296d59abfa4c040b97ce5fd6451a1a, type: 3}
       propertyPath: LevelName
-      value: '"Tercer nivel"'
+      value: Tercer nivel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e296d59abfa4c040b97ce5fd6451a1a, type: 3}
@@ -1773,11 +1773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.89
+      value: 187.4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.37
+      value: 36.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7a343ffc127af4b41b1e509d55d21956, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3591,6 +3591,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -28.000122
       objectReference: {fileID: 0}
+    - target: {fileID: 22460478, guid: ace2d4bf56f98df4196ff81845a465d7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -229.00002
+      objectReference: {fileID: 0}
     - target: {fileID: 2146678464104128110, guid: ace2d4bf56f98df4196ff81845a465d7,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3607,6 +3611,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2146678464104128110, guid: ace2d4bf56f98df4196ff81845a465d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664454151585982969, guid: ace2d4bf56f98df4196ff81845a465d7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2664454151585982969, guid: ace2d4bf56f98df4196ff81845a465d7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -5811,6 +5825,18 @@ PrefabInstance:
     - target: {fileID: 490956, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489144, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: CurrentLives
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489144, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: MaximumLives
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489144, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
+      propertyPath: GameOverScene
+      value: Game Over
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6059d977d1f210348bfbe1a82f4f9883, type: 3}
