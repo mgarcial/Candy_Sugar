@@ -12,6 +12,14 @@ public class ControlVenta : MonoBehaviour, MMEventListener<MMGameEvent>
         this.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        if(Input.GetAxis("Player1_Shoot") > 0)
+        {
+            BotonCerrar();
+        }
+    }
+
     public void BotonCerrar()
     {
         StartCoroutine(CerrarVentana(2));
