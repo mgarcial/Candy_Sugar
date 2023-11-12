@@ -245,4 +245,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Proyecto/Scenes/Game Over.unity
     guid: b5022052949af474db7047bb79cf1c09
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/Victoria.unity
+    guid: e0c30c8f31c9ffb4a85d356cf604d8da
+  - enabled: 1
+    path: Assets/Proyecto/Scenes/Dificultad.unity
+    guid: 7cd4545fac400e34c86073234f53cfc3
   m_configObjects: {}

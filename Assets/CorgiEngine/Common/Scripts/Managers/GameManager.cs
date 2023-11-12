@@ -143,6 +143,13 @@ namespace MoreMountains.CorgiEngine
 		}
 	}
 
+	public enum Dificultad
+	{
+		Facil,
+		Medio,
+		Dificil
+	}
+
 	/// <summary>
 	/// The game manager is a persistent singleton that handles points and time
 	/// </summary>
@@ -157,6 +164,8 @@ namespace MoreMountains.CorgiEngine
 		/// the target frame rate for the game
 		[Tooltip("the target frame rate for the game")]
 		public int TargetFrameRate=300;
+		[Tooltip("La dificultad en la que se está jugando el juego")]
+		public Dificultad dificultad;
 
 		[Header("Lives")]
 

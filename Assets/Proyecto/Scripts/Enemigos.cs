@@ -5,14 +5,9 @@ using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 
 
-public class Enemigos : MMPathMovement, Respawnable, MMEventListener<CorgiEngineEvent>
+public class Enemigos : AIBrain, Respawnable, MMEventListener<CorgiEngineEvent>
 {
     public bool ResetPositionWhenPlayerRespawns = true;
-
-    protected override void Initialization()
-    {
-        base.Initialization();
-    }
 
     public virtual void OnTriggerEnter2D(Collider2D collider)
     {
@@ -24,17 +19,12 @@ public class Enemigos : MMPathMovement, Respawnable, MMEventListener<CorgiEngine
 
     }
 
-    public override void MoveAlongThePath()
-    {
-        base.MoveAlongThePath();
-        Physics2D.SyncTransforms();
-    }
 
     public virtual void OnPlayerRespawn(CheckPoint checkpoint, Character player)
     {
         if (ResetPositionWhenPlayerRespawns)
         {
-            Initialization();
+            
         }
     }
 
@@ -44,7 +34,7 @@ public class Enemigos : MMPathMovement, Respawnable, MMEventListener<CorgiEngine
         {
             if (ResetPositionWhenPlayerRespawns)
             {
-                Initialization();
+                
             }
         }
     }
